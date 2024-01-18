@@ -402,11 +402,11 @@ header .mobile-menu {
         font-size: 70px;
     }
     .intro-wrap .name {
-        font-weight: bold;
+        font-weight: 900;
     }
     .intro-wrap .position {
         font-weight: 400;
-        color: rgb(63, 63, 162);
+        color: #5f99eb
     }
 }
 
@@ -493,10 +493,10 @@ header .mobile-menu {
         font-size: 40px;
     }
     .intro-wrap .name {
-        font-weight: bold;
+        font-weight: 900;
     }
     .intro-wrap .position {
         font-weight: 400;
-        color: rgb(63, 63, 162);
+        color: #5f99eb
     }
 }
