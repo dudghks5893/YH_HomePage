@@ -51,7 +51,7 @@ u,
 html,
 body {
   font-size: 0;
-  background-color: #407ed4;
+  background-color: #214270;
   font-family: Pretendard;
 }
 input::placeholder,
@@ -114,11 +114,11 @@ header .mobile-menu {
     font-size: 100px;
 }
 .intro-wrap .name {
-    font-weight: bold;
+    font-weight: 900;
 }
 .intro-wrap .position {
     font-weight: 400;
-    color: rgb(63, 63, 162);
+    color: #5f99eb
 }
 @media (max-width: 1900px) {
 
