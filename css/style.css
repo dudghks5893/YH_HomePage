@@ -128,7 +128,7 @@ header .mobile-menu {
 
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1024px) {
 
       header .menu-wrap .menu {
         display: none;
@@ -327,86 +327,24 @@ header .mobile-menu {
         text-align: center;
     }
 
-    header .logo-wrap {
-        padding: 20px;
-    }
-    header .logo-wrap .logo-box {
-        font-size: 20px;
-        cursor: pointer;
-        /* width: 100%;
-        height: 28px;
-        background-image: url(/images/homepage/logo-header.png); */
-    }
-
-    header .mobile-menu {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 24px;
-        height: 24px;
-        background-image: url(../image/mobile-menu.png);
-        cursor: pointer;
-        z-index: 999999;
-    }
 
     /* 메뉴 들어가는 애니메이션 */
     header.off .menu-wrap {
-        width: 40%;
-        min-height: 100vh;
-        top: 0;
-        right: 0px;
-        float: right;
         padding: 20px;
-        background: #ffffff;
-        animation: right-to-left 0.2s;
-        z-index: 10;
     }
 
     header.on .menu-wrap {
-        position: absolute;
-        width: 40%;
-        min-height: 100vh;
-        top: 0;
-        right: 0px;
-        float: right;
         padding: 20px;
-        background: #ffffff;
-        animation: left-to-right 0.2s;
-        z-index: 10;
-    }
-
-    header.on .mobile-menu {
-        top: 20px;
-        right: 20px;
-        width: 18px;
-        height: 18px;
-        background-image: url(../image/icon-close.png);
     }
 
     header.on .menu-wrap .menu {
-        display: block;
         font-size: 20px;
         margin-top: 70px;
-        color: #000;
-        cursor: pointer;
     }
 
     /* intro css */
     .intro-wrap {
-        display : flex;
-        flex-direction: column; /* 세로 정렬 */
-        justify-content: center; /* 세로 중앙 정렬 */
-        width: 100%;
-        height: 100%;
         font-size: 70px;
-    }
-    .intro-wrap .name {
-        font-weight: 900;
-    }
-    .intro-wrap .position {
-        font-weight: 400;
-        color: #5f99eb
     }
 }
 
@@ -418,85 +356,62 @@ header .mobile-menu {
         text-align: center;
     }
 
-    header .logo-wrap {
-        padding: 20px;
-    }
-    header .logo-wrap .logo-box {
-        font-size: 20px;
-        cursor: pointer;
-        /* width: 100%;
-        height: 28px;
-        background-image: url(/images/homepage/logo-header.png); */
-    }
-
-    header .mobile-menu {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 24px;
-        height: 24px;
-        background-image: url(../image/mobile-menu.png);
-        cursor: pointer;
-        z-index: 999999;
-    }
-
-    /* 메뉴 들어가는 애니메이션 */
-    header.off .menu-wrap {
-        width: 40%;
-        min-height: 100vh;
-        top: 0;
-        right: 0px;
-        float: right;
-        padding: 10px;
-        background: #ffffff;
-        animation: right-to-left 0.2s;
-        z-index: 10;
-    }
-
-    header.on .menu-wrap {
-        position: absolute;
-        width: 40%;
-        min-height: 100vh;
-        top: 0;
-        right: 0px;
-        float: right;
-        padding: 10px;
-        background: #ffffff;
-        animation: left-to-right 0.2s;
-        z-index: 10;
-    }
-
-    header.on .mobile-menu {
-        top: 20px;
-        right: 20px;
-        width: 18px;
-        height: 18px;
-        background-image: url(../image/icon-close.png);
-    }
-
     header.on .menu-wrap .menu {
-        display: block;
-        font-size: 17px;
+        font-size: 15px;
         margin-top: 60px;
-        color: #000;
-        cursor: pointer;
     }
 
     /* intro css */
     .intro-wrap {
-        display : flex;
-        flex-direction: column; /* 세로 정렬 */
-        justify-content: center; /* 세로 중앙 정렬 */
-        width: 100%;
-        height: 100%;
         font-size: 40px;
     }
-    .intro-wrap .name {
-        font-weight: 900;
+
+}
+
+@media (max-width: 400px) {
+    /* common css */
+    .content-wrap {
+        width: 100%;
+        height: 650px;
+        text-align: center;
     }
-    .intro-wrap .position {
-        font-weight: 400;
-        color: #5f99eb
+
+    header.on .menu-wrap {
+        padding: 15px;
     }
+
+    header.on .menu-wrap .menu {
+        font-size: 12px;
+        margin-top: 50px;
+    }
+
+    /* intro css */
+    .intro-wrap {
+        font-size: 35px;
+    }
+
+}
+
+@media (max-width: 330px) {
+    /* common css */
+    .content-wrap {
+        width: 100%;
+        height: 650px;
+        text-align: center;
+    }
+
+    header.on .menu-wrap {
+        padding: 10px;
+    }
+
+    header.on .menu-wrap .menu {
+        font-size: 12px;
+        margin-top: 50px;
+    }
+
+    /* intro css */
+    .intro-wrap {
+        font-size: 30px;
+    }
+
 }
