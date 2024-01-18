@@ -62,6 +62,7 @@ select {
   display: none;
 }
 
+
 /* common css */
 .content-wrap {
     width: 100%;
@@ -69,35 +70,39 @@ select {
     text-align: center;
 }
 
+
 /* header css */
 header {
+    display: flex;
     position: fixed;
-    text-align: center;
     width: 100%;
-    left: 0;
-    top: 0;
+    justify-content: space-between;
+    align-items: center;
 }
 header .logo-wrap {
-    float: left;
     padding: 30px;
-    cursor: pointer;
-  }
+}
 header .logo-wrap .logo-box {
     font-size: 30px;
+    cursor: pointer;
     /* width: 100%;
     height: 28px;
     background-image: url(/images/homepage/logo-header.png); */
-  }
-.menu-wrap {
-    float: right;
-    padding: 30px 0px;
-  }
-.menu-wrap .menu {
+}
+header .menu-wrap {
+    display: block;
+}
+header .menu-wrap .menu {
     display: inline-block;
     font-size: 30px;
     margin-right: 30px;
     cursor: pointer;
 }
+
+header .mobile-menu {
+    display: none;
+  }
+
 
 /* intro css */
 .intro-wrap {
@@ -115,10 +120,292 @@ header .logo-wrap .logo-box {
     font-weight: 400;
     color: rgb(63, 63, 162);
 }
+@media (max-width: 1900px) {
+
+}
 
 @media (max-width: 1600px) {
 
 }
-@media (max-width: 900px) {
 
+@media (max-width: 1400px) {
+
+      header .menu-wrap .menu {
+        display: none;
+      }
+
+      header {
+        align-items: normal;
+      }
+
+      header .mobile-menu {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 24px;
+        height: 24px;
+        background-image: url(../image/mobile-menu.png);
+        cursor: pointer;
+        z-index: 999999;
+      }
+    
+      /* =================== 모바일 메뉴 오픈 시 오버라이드 ==================== */
+      .dim.on {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 10;
+      }
+      header.on {
+        width: 100vw;
+        height: 100vh;
+        padding: 0px 0px 0px 0px;
+        z-index: 99;
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+    
+      /* 메뉴 들어가는 애니메이션 */
+      header.off .menu-wrap {
+        width: 40%;
+        min-height: 100vh;
+        top: 0;
+        right: 0px;
+        float: right;
+        padding: 30px;
+        background: #ffffff;
+        animation: right-to-left 0.2s;
+        z-index: 10;
+      }
+    
+      header.on .menu-wrap {
+        position: absolute;
+        width: 40%;
+        min-height: 100vh;
+        top: 0;
+        right: 0px;
+        float: right;
+        padding: 30px;
+        background: #ffffff;
+        animation: left-to-right 0.2s;
+        z-index: 10;
+      }
+    
+      header.on .mobile-menu {
+        top: 30px;
+        right: 30px;
+        width: 18px;
+        height: 18px;
+        background-image: url(../image/icon-close.png);
+      }
+
+      header.on .menu-wrap .menu {
+        display: block;
+        font-size: 30px;
+        margin-top: 100px;
+        color: #000;
+        cursor: pointer;
+      }
+    
+      /* header.on .language-container {
+        display: block;
+        position: unset;
+      }
+      header.on .language-container .current-language {
+        display: none;
+      }
+      header.on .language-container .language-selection {
+        position: absolute;
+        top: 23px;
+        left: 30px;
+        height: 14px;
+        background-color: #fff;
+      }
+      header.on .language-container .language-selection ul {
+        list-style: none;
+      }
+      header.on .language-container .language-selection ul li {
+        float: left;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: rgba(1, 10, 90, 0.3);
+        cursor: pointer;
+        padding-left: 14px;
+      }
+      header.on .language-container .language-selection ul li:first-child {
+        padding-left: 0px;
+      }
+    
+      header.on .language-container .language-selection ul li.on {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 14px;
+        color: #010a5a;
+      }
+      header.on .language-container .language-selection ul li::after {
+        content: "|";
+        margin-left: 14px;
+        font-weight: 400;
+        font-size: 10px;
+        color: #d9d9d9;
+      }
+      header.on .language-container .language-selection ul li:last-child::after {
+        content: "";
+        margin: 0px;
+      } */
+
+      /* header.on .menu-wrap .menu-container {
+        width: 100%;
+        margin-top: 85px;
+        display: block;
+        padding: 0px;
+      }
+      header.on .menu-wrap .menu-container ul {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+      }
+      header.on .gnb .menu-container ul li {
+        width: 100%;
+        margin-bottom: 30px;
+      } */
+    
+      /* 모바일 메뉴 opne 애니메이션 */
+      @keyframes left-to-right {
+        0% {
+          transform: translate3d(100%, 0, 0);
+        }
+        to {
+          transform: translateZ(0);
+        }
+      }
+      /* 모바일 메뉴 close 애니메이션 */
+      @keyframes right-to-left {
+        0% {
+          transform: translateZ(0);
+        }
+        to {
+          transform: translate3d(100%, 0, 0);
+        }
+      }
+    
+      /* 메뉴 opne 시 회전 */
+      @keyframes inMenuRotate {
+        0% {
+          opacity: 0;
+          transform: rotate(-60deg);
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      /* 메뉴 close 시 반대로 회전 */
+      @keyframes outMenuRotate {
+        0% {
+          opacity: 0;
+          transform: rotate(60deg);
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+}
+
+@media (max-width: 900px) {
+    /* common css */
+    .content-wrap {
+        width: 100%;
+        height: 600px;
+        text-align: center;
+    }
+
+    header .logo-wrap {
+        padding: 20px;
+    }
+    header .logo-wrap .logo-box {
+        font-size: 20px;
+        cursor: pointer;
+        /* width: 100%;
+        height: 28px;
+        background-image: url(/images/homepage/logo-header.png); */
+    }
+
+    header .mobile-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 24px;
+        height: 24px;
+        background-image: url(../image/mobile-menu.png);
+        cursor: pointer;
+        z-index: 999999;
+    }
+
+    /* 메뉴 들어가는 애니메이션 */
+    header.off .menu-wrap {
+        width: 40%;
+        min-height: 100vh;
+        top: 0;
+        right: 0px;
+        float: right;
+        padding: 10px;
+        background: #ffffff;
+        animation: right-to-left 0.2s;
+        z-index: 10;
+    }
+
+    header.on .menu-wrap {
+        position: absolute;
+        width: 40%;
+        min-height: 100vh;
+        top: 0;
+        right: 0px;
+        float: right;
+        padding: 10px;
+        background: #ffffff;
+        animation: left-to-right 0.2s;
+        z-index: 10;
+    }
+
+    header.on .mobile-menu {
+        top: 20px;
+        right: 20px;
+        width: 18px;
+        height: 18px;
+        background-image: url(../image/icon-close.png);
+    }
+
+    header.on .menu-wrap .menu {
+        display: block;
+        font-size: 17px;
+        margin-top: 60px;
+        color: #000;
+        cursor: pointer;
+    }
+
+    /* intro css */
+    .intro-wrap {
+        display : flex;
+        flex-direction: column; /* 세로 정렬 */
+        justify-content: center; /* 세로 중앙 정렬 */
+        width: 100%;
+        height: 100%;
+        font-size: 40px;
+    }
+    .intro-wrap .name {
+        font-weight: bold;
+    }
+    .intro-wrap .position {
+        font-weight: 400;
+        color: rgb(63, 63, 162);
+    }
 }
